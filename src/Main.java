@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class App {
+public class Main {
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner (System.in);
         Barang[] barangs = new Barang[5];
@@ -41,7 +41,7 @@ public class App {
                 }
                 case 4 -> serviceClass.sorting();
                 case 5 -> { 
-                    System.out.println("Keluar dari program");
+                    System.out.println("Keluar dari program.");
                     return;
                 }
                 default -> System.out.println("Masukkan Input menu yang sesuai.");
