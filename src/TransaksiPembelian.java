@@ -12,9 +12,9 @@ public class TransaksiPembelian {
     }
 
     void tampilDataTransaksi(TransaksiPembelian[] transaksi) {
-        System.out.printf("%-15s %-15s %-15s %-15s %-7s %-15s", "Kode Transaksi", "Nama Pembeli", "Tanggal Pembelian", "Nama Barang", "Kuantitas", "Harga");
+        System.out.printf("%-15s %-15s %-20s %-20s %-15s %-15s", "Kode Transaksi", "Nama Pembeli", "Tanggal Pembelian", "Nama Barang", "Kuantitas", "Harga");
         for (TransaksiPembelian trs : transaksi) {
-            System.out.printf("\n%-15s %-15s %-15s %-15s %-7d %-15d", trs.kodeTransaksi, trs.namaPembeli, trs.tanggalPembelian, trs.brg.nama, trs.qty, trs.brg.harga);
+            System.out.printf("\n%-15s %-15s %-20s %-20s %-15d %-15d", trs.kodeTransaksi, trs.namaPembeli, trs.tanggalPembelian, trs.brg.nama, trs.qty, trs.brg.harga);
         }
     }
 }
