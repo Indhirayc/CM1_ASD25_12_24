@@ -8,7 +8,7 @@ public class TransaksiPembelian {
         this.namaPembeli = namaPembeli;
         this.tanggalPembelian = tanggalPembelian;
         this.qty = qty;
-        this.qty = qty;
+        this.brg = brg;
     }
 
     void tampilDataTransaksi(TransaksiPembelian[] transaksi) {
