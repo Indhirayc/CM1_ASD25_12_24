@@ -11,12 +11,13 @@ public class App {
         barangs[4] = new Barang("Br005", "Mama Lemon Cair", "Sabun", 10, 1000);
         
         TransaksiPembelian[] transaksiPembelians = new TransaksiPembelian[5];
-        transaksiPembelians[0] =new TransaksiPembelian("Tr001", "Santi", "21-04-2024", 1, barangs[0]);
-        transaksiPembelians[1] =new TransaksiPembelian("Tr002", "Vani", "21-04-2024", 2, barangs[1]);
-        transaksiPembelians[2] =new TransaksiPembelian("Tr003", "Siska", "21-04-2024", 3, barangs[2]);
+        transaksiPembelians[0] =new TransaksiPembelian("Tr001", "Agus", "21-04-2024", 1, barangs[0]);
+        transaksiPembelians[1] =new TransaksiPembelian("Tr002", "Santi", "21-04-2024", 2, barangs[1]);
+        transaksiPembelians[2] =new TransaksiPembelian("Tr003", "Santi", "21-04-2024", 3, barangs[2]);
         transaksiPembelians[3] =new TransaksiPembelian("Tr004", "MeiMei", "21-04-2024", 1, barangs[3]);
         transaksiPembelians[4] =new TransaksiPembelian("Tr005", "Ihsan", "21-04-2024", 1, barangs[4]);
 
+        ServiceClass serviceClass = new ServiceClass(transaksiPembelians, 0);
         while (true) { 
             System.out.println("\n========== TOKO MANASUKA ==========");
             System.out.println("BANK MENU :");
@@ -36,7 +37,12 @@ public class App {
                 case 2 -> {
                     transaksiPembelians[0].tampilDataTransaksi(transaksiPembelians);
                 }
-                case 3 -> {}
+                case 3 -> {
+                    System.out.println("====== Cari Nama ======");
+                    System.out.print("Masukan Nama : ");
+                    String namaPembeli = input.nextLine();
+                    serviceClass.searching(namaPembeli);
+                }
                 case 4 -> {}
                 case 5 -> {
                     return;
