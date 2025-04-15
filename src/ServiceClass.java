@@ -1,10 +1,11 @@
+
+import java.util.Arrays;
+
 public class ServiceClass {
     TransaksiPembelian[] transaksiPembelian;
-    int index;
 
-    ServiceClass(TransaksiPembelian[] transaksiPembelian, int index){
+    ServiceClass(TransaksiPembelian[] transaksiPembelian){
         this.transaksiPembelian = transaksiPembelian;
-        this.index = index;
     }
 
     void searching(String namaPembeli){
@@ -18,10 +19,14 @@ public class ServiceClass {
                     count++;
                 }
         } if (count == 0) {
-            System.out.println("\nNama yang dicari tidak ada.");
+            System.out.println("\nData yang dicari tidak ditemukan.");
         }
     }
     
 
-    void sorting(){}
+    void sorting(){
+        Arrays.sort(transaksiPembelian, 0, transaksiPembelian.length, (a, b) -> a.namaPembeli.compareToIgnoreCase(b.namaPembeli));
+        System.out.println("Data Setelah Sorting");
+        transaksiPembelian[0].tampilDataTransaksi(transaksiPembelian);
+    }
 }

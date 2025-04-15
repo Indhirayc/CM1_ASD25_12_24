@@ -17,7 +17,7 @@ public class App {
         transaksiPembelians[3] =new TransaksiPembelian("Tr004", "MeiMei", "21-04-2024", 1, barangs[3]);
         transaksiPembelians[4] =new TransaksiPembelian("Tr005", "Ihsan", "21-04-2024", 1, barangs[4]);
 
-        ServiceClass serviceClass = new ServiceClass(transaksiPembelians, 0);
+        ServiceClass serviceClass = new ServiceClass(transaksiPembelians);
         while (true) { 
             System.out.println("\n========== TOKO MANASUKA ==========");
             System.out.println("BANK MENU :");
@@ -31,20 +31,17 @@ public class App {
             input.nextLine();
 
             switch (plhmn) {
-                case 1 -> {
-                    barangs[0].tampilDataBarang(barangs);
-                }
-                case 2 -> {
-                    transaksiPembelians[0].tampilDataTransaksi(transaksiPembelians);
-                }
+                case 1 -> barangs[0].tampilDataBarang(barangs);
+                case 2 -> transaksiPembelians[0].tampilDataTransaksi(transaksiPembelians);
                 case 3 -> {
                     System.out.println("====== Cari Nama ======");
                     System.out.print("Masukan Nama : ");
                     String namaPembeli = input.nextLine();
                     serviceClass.searching(namaPembeli);
                 }
-                case 4 -> {}
-                case 5 -> {
+                case 4 -> serviceClass.sorting();
+                case 5 -> { 
+                    System.out.println("Keluar dari program");
                     return;
                 }
                 default -> System.out.println("Masukkan Input menu yang sesuai.");
